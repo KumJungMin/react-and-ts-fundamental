@@ -40,15 +40,15 @@ whatever = {}; // ok
 
 // 7. 암묵적 any type의 발생
 // foundMovie는 변수 초기화값이 없으므로 any type이 된다.
+// 이 경우에 foundMovie에 타입을 명시해주는 것이 좋다!(명시적 타입 선언이 필요한 순간)
 const movies = ['Interstellar', 'Inception', 'The Dark Knight'];
-let foundMovie;
+let foundMovie:string;
 
 for (let movie of movies) {
   if (movie === 'Inception') foundMovie = movie;
 }
 
-// => 그래서 foundMovie는 여러가지 타입이 들어갈 수 있다.
-foundMovie = 1;
-foundMovie = true;
-foundMovie = {};
+foundMovie = 1; // error
+foundMovie = true; // error
+foundMovie = {};  // error
 
