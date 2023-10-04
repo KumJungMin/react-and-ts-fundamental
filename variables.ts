@@ -17,3 +17,14 @@ numCatLives = '9'; // error
 let isDone: boolean = false;
 isDone = true; // ok
 isDone = 1; // error
+
+
+// Type inference
+// ts에서는 변수의 타입을 명시하지 않아도, 변수의 초기화 값에 따라 타입을 추론한다.
+let tvShowTitle = 'Game of Thrones'; 
+tvShowTitle = 'Game of Thrones2'; // ok
+tvShowTitle = 123; // error
+
+let isFunny = true;
+isFunny = false; // ok
+isFunny = 'true'; // error
