@@ -38,3 +38,17 @@ whatever = true; // ok
 whatever = {}; // ok
 
 
+// 7. 암묵적 any type의 발생
+// foundMovie는 변수 초기화값이 없으므로 any type이 된다.
+const movies = ['Interstellar', 'Inception', 'The Dark Knight'];
+let foundMovie;
+
+for (let movie of movies) {
+  if (movie === 'Inception') foundMovie = movie;
+}
+
+// => 그래서 foundMovie는 여러가지 타입이 들어갈 수 있다.
+foundMovie = 1;
+foundMovie = true;
+foundMovie = {};
+
