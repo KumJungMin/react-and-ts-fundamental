@@ -28,3 +28,13 @@ tvShowTitle = 123; // error
 let isFunny = true;
 isFunny = false; // ok
 isFunny = 'true'; // error
+
+
+// 4. declare a any type variable
+// any type은 모든 타입을 허용한다.
+let whatever: any = 'whatever';
+whatever = 123; // ok
+whatever = true; // ok
+whatever = {}; // ok
+
+
