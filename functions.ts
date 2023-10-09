@@ -39,3 +39,10 @@ function square_3(x:number) {
 // 12. 익명함수의 경우, ts가 컨텍스트를 통해 타입을 추론한다
 const colors = ['red', 'green', 'blue'];
 colors.map((color) => {});  // color 인자의 타입을 명시하지 않아도, ts가 string으로 추론함 
+
+
+// 13. void는 주로 함수에서 아무것도 반환하지 않을 때 사용한다.
+function logMessage(message:string) { 
+  // return이 없으므로, void 타입이지만, 타입을 명시해주는 게 좋다.
+  console.log(message);
+}
