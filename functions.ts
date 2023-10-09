@@ -20,3 +20,10 @@ const doSomething= (person:string, age:number, isFunny:boolean) => {}
 
 doSomething("ChickenFace", 100, 123); // error
 doSomething("ChickenFace"); // 인수 개수 error
+
+
+// 10. 함수 인자의 기본값은 인자:타입 = 기본값 형태로 정의한다.
+function greet(person:string = 'stranger') {
+  return `Hello ${person}`;
+}
+greet(); // 'Hello stranger'
