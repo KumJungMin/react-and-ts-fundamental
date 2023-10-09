@@ -46,3 +46,22 @@ function logMessage(message:string) {
   // return이 없으므로, void 타입이지만, 타입을 명시해주는 게 좋다.
   console.log(message);
 }
+
+// 14. never는 함수에서 항상 예외가 발생하거나, 절대 반환하지 않을 때 사용한다.
+// void는 undefined를 반환할 수 있지만, never는 절!대! 반환할 수 없다.
+function throwError1(message:string): never {
+  throw new Error(message);
+}
+function throwError2(message:string): never {
+  return error(message); // error 발생
+}
+function gameLoop1(): never {
+  while(true) {
+    // do something
+  }
+}
+function gameLoop2(): never {
+  while(true) {
+    return 1; // error 발생
+  }
+}
