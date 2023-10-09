@@ -27,3 +27,11 @@ function greet(person:string = 'stranger') {
   return `Hello ${person}`;
 }
 greet(); // 'Hello stranger'
+
+// 11. 함수의 반환값의 타입을 추론할 수 있다
+//  인자의 타입이 Number이므로, 반환값의 타입도 Number으로 추론함
+// ts는 인자값의 타입을 토대로 리턴 타입을 추론하므로 복잡한 함수의 경우 반환값의 타입을 명시하는 것이 좋다.
+function square_3(x:number) {  
+  // 리턴값의 타입을 명시하지 않아도, ts가 number로 추론함
+    return x * x;
+}
