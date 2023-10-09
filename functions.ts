@@ -35,3 +35,7 @@ function square_3(x:number) {
   // 리턴값의 타입을 명시하지 않아도, ts가 number로 추론함
     return x * x;
 }
+
+// 12. 익명함수의 경우, ts가 컨텍스트를 통해 타입을 추론한다
+const colors = ['red', 'green', 'blue'];
+colors.map((color) => {});  // color 인자의 타입을 명시하지 않아도, ts가 string으로 추론함 
