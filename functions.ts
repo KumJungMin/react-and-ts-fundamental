@@ -13,3 +13,10 @@ function square_2(x:number) {
 }
 square_2(2); // 4
 square_2('z'); // error
+
+
+// 9. 함수의 인자 개수가 맞지 않으면 ts 에러가 발생한다.
+const doSomething= (person:string, age:number, isFunny:boolean) => {}
+
+doSomething("ChickenFace", 100, 123); // error
+doSomething("ChickenFace"); // 인수 개수 error
