@@ -17,3 +17,10 @@ function randomCoordinate(): {x: number, y: number} {
     y: Math.random() 
   }
 }
+// 17. 함수에 인자를 넘길 때, 객체 리터럴을 넘기면 인자 개수가 초과된 경우를 에러를 주지만,
+//  만약 객체값을 변수에 정의하여 넘기면 인자 개수가 초과되어도 에러를 주지 않는다!!
+
+printName({first: 'Elton', last: 'John', age: 27});  // error
+
+const singer = { first: 'Elton', last: 'John', age: 27 };
+printName(singer); // working..? why?
