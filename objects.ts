@@ -24,3 +24,22 @@ printName({first: 'Elton', last: 'John', age: 27});  // error
 
 const singer = { first: 'Elton', last: 'John', age: 27 };
 printName(singer); // working..? why?
+
+
+// 18. 타입 별칭: 특정 타입이나 인터페이스를 참조할 수 있는 타입 변수(반복적인 타입 정의를 줄일 수 있음)
+// 수정 전
+function doubleCoordinate_1(coordinate: {x: number, y: number}): {x: number, y: number} {
+  return {
+    x: coordinate.x * 2,
+    y: coordinate.y * 2,
+  }
+}
+// 수정 후
+type Point = { x: number, y: number };
+
+function doubleCoordinate_2(coordinate: Point): Point {
+  return {
+    x: coordinate.x * 2,
+    y: coordinate.y * 2,
+  }
+}
