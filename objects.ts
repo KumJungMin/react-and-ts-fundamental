@@ -43,3 +43,43 @@ function doubleCoordinate_2(coordinate: Point): Point {
     y: coordinate.y * 2,
   }
 }
+
+// 19. 중첩 객체에서 타입 별칭을 사용하면, 코드를 더 간결하게 작성할 수 있다.
+// 수정 전
+function calculatePayout_1(song: {
+  title: string,
+  artist: string,
+  streams: number,
+  credits: {
+    producer: string,
+    writer: string,
+    arranger: string,
+  }
+}) {}
+
+
+// 수정 후
+type Song = {
+  title: string,
+  artist: string,
+  streams: number,
+  credits: Credits,
+}
+type Credits = {
+  producer: string,
+  writer: string,
+  arranger: string,
+}
+function calculatePayout_2(song: Song) {
+  console.log(song.credits.arranger);
+}
+calculatePayout_2({
+  title: 'Blinding Lights',
+  artist: 'The Weeknd',
+  streams: 1500000,
+  credits: {
+    producer: 'Max Martin',
+    writer: 'Abel Tesfaye',
+    arranger: 'Tommy Brown',
+  }
+})
