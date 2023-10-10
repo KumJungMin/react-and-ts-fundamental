@@ -92,3 +92,30 @@ type Point = {
 }
 const myPoint: Point = { x: 10, y: 20 }; // ok
 const myPoint2: Point = { x: 10, y: 20, z: 30 }; // ok
+
+// 21-1. 읽기 전용 프로퍼티(readonly): 객체의 프로퍼티를 읽기 전용으로 정의하고 싶을 때 사용한다. 
+type User = {
+  readonly id: number,
+  name: string,
+}
+const user: User = { id: 1234, name: 'Elton' };
+user.name = 'John'; // ok
+user.id = 4567; // error
+
+// 21-2. 단 객체는 참조하는 것이므로, readonly로 정의해도 객체의 프로퍼티는 수정이 가능하다.
+type Animal = {
+  readonly natural: Natural,  
+  name: string, 
+}
+type Natural = {
+  area: string,
+  species: string,
+}
+const dog : Animal = {
+  name: 'dog',
+  natural: {
+    area: 'land',
+    species: 'mammal',
+  }
+}
+dog.natural.area = 'sea'; // 가능!
