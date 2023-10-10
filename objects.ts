@@ -35,7 +35,7 @@ function doubleCoordinate_1(coordinate: {x: number, y: number}): {x: number, y: 
   }
 }
 // 수정 후
-type Point = { x: number, y: number };
+// type Point = { x: number, y: number };
 
 function doubleCoordinate_2(coordinate: Point): Point {
   return {
@@ -83,3 +83,12 @@ calculatePayout_2({
     arranger: 'Tommy Brown',
   }
 })
+
+// 20. 선택적 프로퍼티: 객체의 프로퍼티 중 일부만 필수로 정의하고 싶을 때 사용한다.
+type Point = {
+  x: number,
+  y: number,
+  z?: number, // z는 선택적 프로퍼티
+}
+const myPoint: Point = { x: 10, y: 20 }; // ok
+const myPoint2: Point = { x: 10, y: 20, z: 30 }; // ok
