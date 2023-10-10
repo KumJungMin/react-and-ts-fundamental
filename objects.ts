@@ -119,3 +119,32 @@ const dog : Animal = {
   }
 }
 dog.natural.area = 'sea'; // 가능!
+
+// 22. intersection 타입(&): 두 개 이상의 타입을 합쳐준다.
+type Circle = {
+  radius: number,
+}
+type Colorful = {
+  color: string,
+}
+type ColoredCircle = Circle & Colorful;
+
+const happyFace: ColoredCircle = {
+  radius: 42,
+  color: 'yellow',
+}
+
+type Cat = {
+  numberOfLives: number,
+}
+type Dog = {
+  breed: string,
+}
+// 중괄호를 이용해 타입을 추가로 정의할 수 있음
+type CatDog = Cat & Dog & { name: string }; 
+
+const christy: CatDog = {
+  numberOfLives: 9,
+  breed: 'Persian',
+  name: 'Christy',
+}
