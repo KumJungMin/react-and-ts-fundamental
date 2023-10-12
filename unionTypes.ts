@@ -48,3 +48,8 @@ coords3.push({ x: 0, y: 0 }); // ok
 coords3.push({ lat: 0, long: 0 }); // ok
 coords3.push({ x: 0, y: 0, lat: 0, long: 0 }); // ok
 coords3.push({ x: 0, long: 0 }); // error
+
+// 28. 리터럴 타입을 유니온 타입과 함께 사용할 수 있다.
+let mood: 'happy' | 'sad' = 'happy';
+mood = 'sad';
+mood = 'angry'; // error
