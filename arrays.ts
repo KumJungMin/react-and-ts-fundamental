@@ -19,3 +19,15 @@ const bools2: boolean[] = [];
 // }
 const coords: Point[] = [];
 coords.push({ x: 0, y: 0 }); // ok
+
+
+// 24. 다중 배열에서 타입을 지정하는 방법
+// 2차원 배열을 지정할 때 "타입[][]" 형식
+const board:string[][] = [
+  ["X", "O", "X"], 
+  ["X", "X", "O"], 
+  ["O", "X", "X"]
+];
+
+// 3차원 배열을 지정할 때 "타입[][][]" 형식
+const demo:number[][][] = [[[1]]]
