@@ -35,3 +35,16 @@ function calculateText2(price: number | string, tax: number) {
   if (typeof price === 'number') return price * tax; 
   else price.replace('$', '')
 }
+
+// 27. 여러 타입을 가지는 배열을 정의하는 법 "(타입1 | 타입2)[]"" 형식
+const stuff1: (number | string)[] = [1,2,3,'hello'];
+
+// 이렇게 정의하면 두 개의 타입을 요소로 가지는 배열이 아니라,
+// 숫자 배열 혹은 문자열 배열 중 하나만 가지는 배열이 된다.
+const stuff2: number[] | string[] = [1,2,3,'hello']; 
+
+const coords3: (Point|Loc)[] = [];
+coords3.push({ x: 0, y: 0 }); // ok
+coords3.push({ lat: 0, long: 0 }); // ok
+coords3.push({ x: 0, y: 0, lat: 0, long: 0 }); // ok
+coords3.push({ x: 0, long: 0 }); // error
