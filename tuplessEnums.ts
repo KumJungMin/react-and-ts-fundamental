@@ -10,3 +10,17 @@ const stuff3: [number, string] = ['a', 1];  // error
 // 오직 3개의 number타입만 가지도록 정의
 const color:[number, number, number] = [255, 255, 255]; // ok
 const color2:[number, number, number] = [255, 255]; // error
+
+
+// 29-2. [한계] 튜플은 값을 추가하거나 제거해도 별도의 에러가 발생하지 않음!!
+type HTTPResponse = [number, string];
+
+const goodResponse: HTTPResponse = [200, 'OK'];
+const responses: HTTPResponse[] = [
+    [200, 'OK'],
+    [404, 'Not Found'],
+    [500, 'Internal Server Error'],
+];
+
+goodResponse.push(404); // ok;;;
+goodResponse.pop(); // ok;;;
