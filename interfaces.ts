@@ -24,3 +24,33 @@ interface Person2 {
 }
 const person4: Person2 = { name: 'Jane', age: 22 }; // ok
 person4.age++; // error
+
+
+// interface에서 함수를 정의하는 방법
+
+interface Person3 {
+  name: string;
+  readonly age: number;
+  // sayHi: () => string;
+  sayHi(): string;
+}
+const person5: Person3 = {
+  name: 'Jane',
+  age: 22,
+  sayHi: () => 'Hello',
+};
+
+// interface에서 함수의 인자를 정의할 수 있음
+
+interface Product {
+  name: string;
+  price: number;
+  applyDiscount(discount: number): number;
+}
+const shoes: Product = {
+  name: 'Shoes',
+  price: 10000,
+  applyDiscount(discount: number) { // error: number타입의 값을 리턴하지 않아서!
+    // return this.price * ((100 - discount) / 100);
+  },
+};
