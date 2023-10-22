@@ -19,3 +19,16 @@ function isDelivered(status: OrderStatus) {
 
 isDelivered(OrderStatus.RETURNED); // okay
 isDelivered('DELIVERED'); // type error
+
+// enum에 여러 타입을 지정할 수 도 있으나 대부분 같은 타입의 값을 선언
+enum ArrayKeys {
+  UP = 'up', 
+  DOWN = 'down', 
+  LEFT = 'left', 
+  RIGHT = 'right',
+  ERROR = 404
+} 
+function move(key: ArrayKeys) {
+  // 값을 비교할 때 enum을 쓰면, 값이 아닌 이름으로 비교하므로 오타를 줄일 수 있음
+  if (key === ArrayKeys.DOWN) console.log('down');
+}
