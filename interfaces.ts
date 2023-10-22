@@ -16,3 +16,11 @@ interface Person {
 const person: Person = { name: 'Jane' }; // ok
 const person2: Person = { name: 'Jane', age: 22 }; // ok
 const person3: Person = {}; // error
+
+// readonly로 읽기 전용 프로퍼티를 정의한다.
+interface Person2 {
+  name: string;
+  readonly age: number;
+}
+const person4: Person2 = { name: 'Jane', age: 22 }; // ok
+person4.age++; // error
