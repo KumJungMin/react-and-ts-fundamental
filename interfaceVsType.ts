@@ -7,3 +7,10 @@ interface Dog {
 }
 
 const dog: Dog = { name: 'Jane', birth: 1992 }; // ok
+
+
+
+// 2. 상속을 통해 interface를 확장할 수 있지만, type은 불가능
+interface ServiceDog extends Dog {
+  job: 'drug sniffing' | 'bomb sniffing' | 'rescue' | 'therapy';
+}
