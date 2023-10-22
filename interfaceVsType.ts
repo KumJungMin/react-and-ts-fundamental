@@ -34,3 +34,9 @@ const tony: Engineer = {
   email: '',
   favoriteLanguage: 'TypeScript',
 };
+
+
+// 주요 차이점
+// interface는 객체 타입을 정의한다.
+// interface는 타입 선언 후 타입을 추가할 수 있다.
+// interface는 상속을 통해 확장할 수 있다.
